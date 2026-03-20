@@ -6,6 +6,11 @@ import requests
 
 @tool("location_tool", description="A tool to get the current location of the user")
 def location_tool() -> str:
+    """
+    This tool uses the ip-api.com API to get the current location of the user based on their IP address.
+    Returns:
+        - A string with the current location of the user in the format "city, country".
+    """
     response = requests.get('http://ip-api.com/json/')
     data = response.json()
 
@@ -14,6 +19,13 @@ def location_tool() -> str:
 
 @tool("get_province_code", description="A tool to get the province code for a given province name")
 def get_province_code(province_name: str) -> str:
+    """
+    This tool uses a CSV file with the province names and codes to get the province code for a given province name.
+    Args:
+        - province_name: The name of the province to get the code for.
+    Returns:
+        - A string with the province code or an error message if the province name is not found
+    """
     df = pd.read_csv("../data/dict_municipios.csv", dtype=str)
     province_code = df[df['NOMBRE'] == province_name]['CPRO'].unique()
 
@@ -27,6 +39,13 @@ def get_province_code(province_name: str) -> str:
 
 @tool("get_weather", description=" A tool to get the weather of a province code")
 def get_weather(province_code: str) -> str:
+    """
+    This tool uses the AEMET Open Data API to get the weather of a province code.
+    Args:
+        - province_code: The code of the province to get the weather information for.
+    Returns:
+        - A string with the weather information or an error message if the API request fails.
+    """
     try:
         response = requests.get(
             url=f"https://opendata.aemet.es/opendata/api/prediccion/provincia/hoy/{province_code}/?api_key={AEMET_API_KEY}"

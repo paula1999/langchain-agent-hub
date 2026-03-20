@@ -7,6 +7,9 @@ from agents.main_agent import create_graph, running_agent
 from utils.ingest import load_files
 
 if __name__ == '__main__':
+    """
+    This is the main entry point of the application. It first loads the PDF files into the vector store, then creates the RAG agent and runs it.
+    """
     # Ingest files to DB
     load_files()
 

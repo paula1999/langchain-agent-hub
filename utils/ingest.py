@@ -9,6 +9,9 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 
 def load_files():
+    """
+    This function loads the PDF files from the "data" folder, splits them into chunks, and adds them to the vector store.
+    """
     # Embeddings
     embeddings = GoogleGenerativeAIEmbeddings(
         model="gemini-embedding-001",
