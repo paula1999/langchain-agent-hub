@@ -1,0 +1,14 @@
+langchain
+langchain-openai
+langchain-google-vertexai
+langchain-google-genai
+langchain-opendataloader-pdf
+langchain-community
+langchain-text-splitters
+langchain-chroma
+openai
+faiss-cpu
+pandas
+PyPDF
+PyPDF2
+requests
