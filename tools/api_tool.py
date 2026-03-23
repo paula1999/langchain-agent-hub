@@ -1,7 +1,12 @@
 from langchain_core.tools import tool
 
 import pandas as pd
+import os
 import requests
+from dotenv import load_dotenv
+load_dotenv()
+
+AEMET_API_KEY = os.getenv('AEMET_API_KEY')
 
 
 @tool("location_tool", description="A tool to get the current location of the user")
@@ -26,7 +31,7 @@ def get_province_code(province_name: str) -> str:
     Returns:
         - A string with the province code or an error message if the province name is not found
     """
-    df = pd.read_csv("../data/dict_municipios.csv", dtype=str)
+    df = pd.read_csv("data/dict_municipios.csv", dtype=str)
     province_code = df[df['NOMBRE'] == province_name]['CPRO'].unique()
 
     if len(province_code) == 0:
