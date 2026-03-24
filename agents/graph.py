@@ -100,4 +100,3 @@ def running_agent(rag_agent):
                         print(f"Tool: {last_msg.content}")
 
         final_state = rag_agent.get_state(config)
-        
