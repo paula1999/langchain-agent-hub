@@ -1,7 +1,6 @@
 from tools.tools import tools
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langgraph.prebuilt import ToolNode
 from datetime import datetime
 
 from dotenv import load_dotenv
@@ -18,9 +17,7 @@ llm = ChatGoogleGenerativeAI(
 # Bind tools to the LLM
 llm_tools = llm.bind_tools(tools)
 
-tool_node = ToolNode(tools)
-
-
+# System prompt
 main_system_prompt = f"""
 You are an intelligent AI assistant who answers questions.
 Use the retriever tool available to answer questions about europe context.

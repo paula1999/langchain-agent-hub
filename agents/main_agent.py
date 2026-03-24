@@ -1,8 +1,8 @@
 from typing import TypedDict, Annotated, Sequence
 from operator import add as add_messages
 
-from agents.agents_config import llm, llm_tools, tool_node, main_system_prompt
-from tools.tools import tools, tools_dict
+from agents.agents_config import llm, llm_tools, main_system_prompt
+from tools.tools import tools, tools_dict, tool_node
 
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage, ToolMessage, BaseMessage
 from langgraph.graph import StateGraph, END
