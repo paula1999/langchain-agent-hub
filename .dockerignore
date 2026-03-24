@@ -9,5 +9,4 @@ build/
 dist/
 *.sqlite3
 chroma.sqlite3
-data/
 notebooks/
