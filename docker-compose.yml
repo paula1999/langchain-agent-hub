@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: langchain-agent-hub:latest
+    env_file:
+      - .env
+    environment:
+      - OPENAI_API_KEY
+      - AEMET_API_KEY
+    volumes:
+      - ./vectorstores:/app/vectorstores
+    ports:
+      - "${PORT:-8080}:8080"
+    command: ["python", "main.py"]
+    restart: unless-stopped

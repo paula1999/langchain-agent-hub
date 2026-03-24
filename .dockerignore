@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv
+venv/
+env/
+.env
+.git
+build/
+dist/
+*.sqlite3
+chroma.sqlite3
+data/
+notebooks/
