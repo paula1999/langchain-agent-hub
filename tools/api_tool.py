@@ -39,7 +39,7 @@ def get_province_code(province_name: str) -> str:
     if len(province_code) == 1:
         return f'El código de la provincia {province_name} es {province_code[0]}'
     
-    return f'Hay varios códigos para la provincia {province_name}: {', '.join(code[0] for code in province_code)}'
+    return f"Hay varios códigos para la provincia {province_name}: {', '.join(code[0] for code in province_code)}"
 
 
 @tool("get_weather", description=" A tool to get the weather of a province code")
