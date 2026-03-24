@@ -14,6 +14,6 @@ services:
     volumes:
       - ./vectorstores:/app/vectorstores
     ports:
-      - "${PORT:-8080}:8080"
-    command: ["python", "main.py"]
+      - "8000:8000"
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
     restart: unless-stopped
