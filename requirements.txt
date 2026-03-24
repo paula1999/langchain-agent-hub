@@ -12,3 +12,6 @@ pandas
 PyPDF
 PyPDF2
 requests
+fastapi
+uvicorn
+pydantic
